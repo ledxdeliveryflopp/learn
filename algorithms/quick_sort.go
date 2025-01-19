@@ -9,6 +9,7 @@ func QuickSort(list []int) []int {
 	pivot := list[(len(list)-1)/2] // опорный элемент
 	var less []int
 	var greater []int
+	var equal []int
 	for _, value := range list {
 		if value < pivot {
 			less = append(less, value) // выделяем подмассив меньше pivot
@@ -19,7 +20,12 @@ func QuickSort(list []int) []int {
 			greater = append(greater, value) // выделяем подмассив больше pivot
 		}
 	}
-	result := append(QuickSort(less), pivot)       // создаем массив, сортируем меньший подмассив + екстендим pivot'ом
+	for _, value := range list {
+		if value == pivot {
+			equal = append(equal, value) // выделяем подмассив равному pivot(что бы сохранить дубли)
+		}
+	}
+	result := append(QuickSort(less), equal...)    // создаем массив, сортируем меньший подмассив + екстендим pivot'ом
 	result = append(result, QuickSort(greater)...) // добавлям к нему отсортированный больший подмассив
 
 	return result
