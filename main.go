@@ -28,4 +28,5 @@ func main() {
 		log.Printf("index: %d, value: %d ", index, value)
 		log.Printf("check, get value by index: %d", sortedArr[index])
 	}
+	//algorithms.BFSSearchTest()
 }

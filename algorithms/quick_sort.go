@@ -6,7 +6,8 @@ func QuickSort(list []int) []int {
 	if len(list) < 2 {
 		return list
 	}
-	pivot := list[(len(list)-1)/2] // опорный элемент
+	pivot := list[(len(list)-1)/2] // опорный элемент, лучше брать случайный, тк первый элемент плохо работает
+	// при отсортированном массиве, медиана вычисляется трудозатрат
 	var less []int
 	var greater []int
 	var equal []int
