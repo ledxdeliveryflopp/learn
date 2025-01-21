@@ -24,7 +24,6 @@ func (m Message) createJson(detail string) ([]byte, error) {
 func MessageHandler(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	query, err := url.ParseQuery(request.URL.RawQuery)
-	log.Println("query: ", query)
 	if err != nil {
 		writer.WriteHeader(http.StatusBadRequest)
 		log.Println("invalid query", err)
