@@ -2,6 +2,7 @@ package tests
 
 import (
 	"learn/algorithms"
+	"log"
 	"testing"
 )
 
@@ -14,4 +15,6 @@ func TestQuickSort(t *testing.T) {
 			t.Errorf("Result was incorrect, got: %d, want: %d.", result, expectedList)
 		}
 	}
+	log.Printf("expected list: %d", expectedList)
+	log.Printf("sorted list: %d", result)
 }

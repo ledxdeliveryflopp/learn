@@ -1,10 +1,8 @@
 package main
 
 import (
-	"learn/go/api"
-	"log"
+	"learn/go/pointers"
 	"math/rand"
-	"net/http"
 )
 
 // Создание массива определенной длины со случайными цифрами в определенном диапазоне
@@ -30,12 +28,15 @@ func main() {
 	//	log.Printf("check, get value by index: %d", sortedArr[index])
 	//}
 	//algorithms.BFSSearchTest()
-	http.HandleFunc("/test", api.MessageHandler)
-	err := http.ListenAndServe(":1111", nil)
-	if err != nil {
-		log.Println(err)
-		return
-	}
+	//http.HandleFunc("/test", api.MessageHandler)
+	//err := http.ListenAndServe(":1111", nil)
+	//if err != nil {
+	//	log.Println(err)
+	//	return
+	//}
+	//sortedArr := algorithms.SelectionSort([]int{5, 3, 6, 2, 10})
+	//log.Println(sortedArr)
+	pointers.SetDataMain()
 }
 
 //func main() {

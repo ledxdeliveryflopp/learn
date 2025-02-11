@@ -25,7 +25,7 @@ jobs:
         run: go build
       - name: Get file list
         run: ls -A
-      - name: Run quick sort test
+      - name: Run tests
         run: go test -v ./...
       - name: run code linter
         uses: golangci/golangci-lint-action@v6
